@@ -1,0 +1,335 @@
+body,html {
+  height: 100%;
+  background-color: #333333;
+  font-family: "Raleway";
+  color: white;
+}
+
+#navbar-toggle-cbox {
+  display:none
+}
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}
+.navdiv{
+  margin: 10px;
+}
+@media only screen and (max-width: 768px){
+  .navdiv{
+    margin: 5px;
+  }
+}
+
+.gridbox
+     {
+          height: 550px;
+          width:550px;
+          bgcolor="black";
+          position: absolute;
+          margin-left: 10%;
+          margin-top: 10%;
+      }
+        
+.heading{
+  background-color: #f2f2f2;
+  color: black;
+}
+.animateopen{
+  transition-duration: 1s;
+  
+}
+.logosize {
+  height: 90px; 
+  width: 90px;
+}
+.headerposition {
+  position: relative; 
+  margin-top: 15px; 
+  display: inline-block;
+}
+.headerposition p{
+  font-size: 36px;
+}
+
+@media only screen and (max-width: 768px){
+  .logosize {
+  height: 40px; 
+  width: 40px;
+}
+ .headerposition {
+  position: relative; 
+  margin-top: 5px; 
+  display: inline-block;
+}
+.headerposition p,{
+  font-size: 20px;
+}
+}
+@media only screen and (max-width: 992px){
+  .logosize {
+  height: 60px; 
+  width: 60px;
+}
+ .headerposition {
+  position: relative; 
+  margin-top: 10px; 
+  display: inline-block;
+}
+.headerposition p{
+  font-size: 28px;
+}
+}
+
+.imgsize{
+  height: 300px;
+  width: 700px;
+}
+@media only screen and (max-width: 992px){
+  .imgsize{
+    height: 300px;
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .imgsize{
+    height: 200px;
+    width: 400px;
+  }
+}
+
+.animfontsize {
+  font-size: 70px;
+  text-shadow: 5px 5px 5px #333333;
+  animation-name: changecolor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes changecolor{
+  0%{color: black;}
+  50%{color: white;}
+  100%{color: black;}
+}
+@media only screen and (max-width: 992px){
+  .animfontsize{
+  font-size: 40px;
+  text-shadow: 4px 4px 4px #333333;
+  animation-name: changecolor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+  @keyframes changecolor{
+   0%{color: black;}
+  50%{color: white;}
+  100%{color: black;}
+}
+}
+@media only screen and (max-width: 768px){
+  .animfontsize{
+  font-size: 20px;
+  text-shadow: 3px 3px 3px #333333;
+  animation-name: changecolor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+  @keyframes changecolor{
+   0%{color: black;}
+  50%{color: white;}
+  100%{color: black;}
+}
+}
+
+.fontsize {
+  font-size: 50px;
+  color: white;
+}
+@media only screen and (max-width: 768px){
+  .fontsize{
+    font-size: 20px;
+    color: white;
+  }
+}
+
+.main {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.backgroundimg {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.backgroundimg.back1 {
+  background-image: url("1.jpg");
+  
+}
+
+.backgroundimg.back2 {
+  background-image: url("2.jpg");
+
+}
+
+.hovereffect:hover {
+  transition-duration: 300ms;
+  transform: scale(1.03, 1.03);
+  background-color: #6E6E6E;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  border-radius: 15px 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-fixed-bg {
+    background-attachment: fixed;
+  }
+}
+
+.footerend{
+     text-align: center;
+     color: black;
+}
+.footer {
+    width: 100%;
+    display: inline-block;
+    height: 120px;
+    box-shadow: 3px 3px 3px #d3d3d3;
+}
+.imgback{
+   position: absolute;
+   top: 50%;
+   left: 0px;
+   border-bottom: 500px solid transparent;
+   border-radius: 300px;
+   border-left: 200px solid  rgba(200,100,255,0.5);
+   border-right: 200px solid  rgba(200,100,255,0.5);
+}
+@media only screen and (max-width: 768px){
+  .imgback{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    border-bottom: 100px solid transparent;
+    border-radius: 100px;
+   border-left: 70px solid  rgba(200,100,255,0.5);
+   border-right: 70px solid  rgba(200,100,255,0.5);
+  }
+}
+@media only screen and (max-width: 992px){
+  .imgback{
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    border-bottom: 200px solid transparent;
+    border-radius: 200px;
+   border-left: 100px solid  rgba(200,100,255,0.5);
+   border-right: 100px solid  rgba(200,100,255,0.5);
+  }
+}
+.imgback p{
+  font-size: 30px;
+}
+@media only screen and (max-width: 992px){
+  .imgback p{
+  font-size: 20px;
+}
+}
+@media only screen and (max-width: 768px){
+  .imgback p{
+  font-size: 15px;
+}
+}
+.block{
+  display: block;
+}
+@media only screen and (max-width: 600px){
+  .block{
+    background-color: #333333;
+    display: none;
+  }
+}
+.animate {
+  -webkit-animation-name: animate;
+   -webkit-animation-duration: 1.5s;
+  -moz-animation-name: animate;
+   -moz-animation-duration: 1.5s;
+   -ms-animation-name: animate;
+   -ms-animation-duration: 1.5s;
+  -o-animation-name: animate;
+   -o-animation-duration: 1.5s;
+   animation-name: animate;
+   animation-duration: 1.5s;
+
+}
+@-webkit-keyframes animate {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg) rotateX(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg) rotateX(359deg);}
+}
+@-moz-keyframes animate {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg) rotateX(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg) rotateX(359deg);}
+}
+@-o-keyframes animate {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg) rotateX(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg) rotateX(359deg);}
+}
+@-ms-keyframes animate {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg) rotateX(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg) rotateX(359deg);}
+}
+@keyframes animate {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg) rotateX(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg) rotateX(359deg);}
+}
+
+.animaterot {
+  -webkit-animation-name: animaterot;
+   -webkit-animation-duration: 1.5s;
+  -moz-animation-name: animaterot;
+   -moz-animation-duration: 1.5s;
+   -ms-animation-name: animaterot;
+   -ms-animation-duration: 1.5s;
+  -o-animation-name: animaterot;
+   -o-animation-duration: 1.5s;
+   animation-name: animaterot;
+   animation-duration: 1.5s;
+
+}
+@-webkit-keyframes animaterot {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg);}
+}
+@-moz-keyframes animaterot {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg);}
+}
+@-o-keyframes animaterot {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg);}
+}
+@-ms-keyframes animaterot {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg);}
+}
+@keyframes animaterot {
+  0% {transform: scale(0, 0) rotateZ(0deg) rotateY(0deg);}
+    100% {transform: scale(1, 1) rotateZ(359deg) rotateY(359deg);}
+}
+
+.gradient {
+     background: -webkit-radial-gradient(#333333, #808080, #f2f2f2);
+     background: -moz-radial-gradient(#333333, #808080, #f2f2f2);
+     background: -o-radial-gradient(#333333, #808080, #f2f2f2);
+     background: -ms-radial-gradient(#333333, #808080, #f2f2f2);
+     background: radial-gradient(#333333, #808080, #f2f2f2);
+}

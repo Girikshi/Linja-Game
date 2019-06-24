@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta charset="UTF-8">
+         <title>Playable Ui</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="w3.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"><!-- Resource style -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
+    </head>
+    <script type="text/javascript" src="ui5.js"></script>
+<script type="text/javascript" src="valid5.js"></script>
+    <body>
+        <div class="block" style="border-radius: 15px 50px; padding: 20px;">
+            <div class="row">
+                <div class="col-md-7 col-lg-7">
+                   <div style="padding: 25px;" class="w3-container">
+                    <p class="w3-jumbo w3-center"><u>Cryptron</u></p>
+                    <br>
+                    <!--<div class="container" style="height: 500px; width: 100%; border: 2px outset;">
+                    </div>-->
+                    
+                    <div class="w3-left" style="border: 2px outset; height: 50px; width: 50px; margin-top: 605px; margin-left: -6px; background-color: black;" id="box1">
+                    </div>
+      
+                  
+                    <div class="w3-right" style="border: 2px outset; height: 50px; width: 50px; margin-top: 115px; background-color: black; margin-left: 616px; position: absolute " id="box0">
+                    </div>
+					<center>
+                     <div class="gridbox" id="container" style="margin-left: 50px;">
+                       <!--  the game grid   -->
+                         <canvas id="canvas" height="560px" width="560px" style="z-index:0;position : relative; left : 0; top : 0;"  ></canvas>
+                         <canvas id="canvas1" height="560px" width="560px" style="z-index:3;position : absolute; left : 0; top : 0;"></canvas>
+                         <canvas id="canvas2" height="560px" width="560px" style="z-index:6;position : absolute; left : 0; top : 0;"></canvas>
+                    </div>
+                    </center>
+
+                   </div>
+                </div>
+                <div class="col-md-5 col-lg-5">
+                  <div style="margin-right: 25px;">
+                    <div class="w3-center">
+                         <button class="btn btn-lg btn-primary w3-hover-none w3-dark-grey w3-hover-light-grey" onClick="history.go(0)" VALUE="Refresh">Restart
+                         </button>
+                    </div><br>
+                    <p class="w3-xxlarge w3-center">INPUT</p>
+                    <div class="w3-container w3-center">
+                    <center><textarea class="w3-text-black"rows="3" cols="25" style="border-radius: 20px;" id="themove">
+                    </textarea></center>
+                  </div><br>
+                    <div class="w3-container">
+                        <button class="w3-left btn btn-lg btn-primary w3-hover-none w3-dark-grey w3-hover-light-grey" onClick="takeInput();erase();">Submit
+                        </button>
+                        <button class="w3-right btn btn-lg btn-primary w3-hover-none w3-dark-grey w3-hover-light-grey" onClick="undomove()">Undo
+                        </button>
+                     </div>
+                    </div>
+                    <p class="w3-xxlarge w3-center">Status</p>
+                    <div class="w3-container heading" style="width: 100%; height: 100px; border-radius: 20px; border-color: #f2f2f2;">
+                    <center><div class="well" id="test">
+                    </div></center> 
+                    </div><br>
+                  <br>
+                    <div class="heading w3-container" style="border-radius: 15px 50px; padding: 20px;">
+                        <p class="w3-xlarge"><b><u>HOW TO PLAY</u></b></p>
+                        <p class="w3-large"><b>To click and play</b></p>
+                        <ul class="w3-ul" style="font-size: 15px;">
+                            <li>Single click on a row containing your HackDroids to select it.</li>
+                            <li>Single click on a row where you want to move the HackDroid.</li>
+                            <li>To deselect, click on the same row again.</li>
+                           
+                        </ul><br>
+                        <p class="w3-large"><b>To play by giving inputs</b></p>
+                        <ul class="w3-ul" style="font-size: 15px;">
+                            <li> Give inputs in the input box.</li>
+                            <li>For input format : 2 numbers seperated by commas denoting the initial and final position of the token you want to move. e.g 2,3 where 2 is the initial row and 3 is the final row movement.</li>
+                            <li></li>
+                            <li><strong>RULES:</strong></li>
+                            <li><strong>1) </strong>Each player gets 2 moves per turn of which:</li>
+                            <li>i) The first move allows you to move your token ahed by exactly one row.Let the total no of tokens exsisting in the landing row before before playing the move be 'count'.</li>
+                            <li>ii) The second move allows you to move your token ahead by exactly 'count' rows.</li>
+                            <li><strong>2) </strong> The game ends when all the tokens of one player have crossed all the tokens of other player.
+                            </li> 
+                            <li><strong>NOTE : </strong> Each row can contain maximum of 6 tokens (barring bases) i.e.'count' will never exceed 5.</li>
+                        </ul>
+                        <br>
+                        <p style="font-size:15px;">To restart the game click on the restart button.</p>
+                        <p style="font-size:15px;">To know more about cryptron check the <span><a href="#" style="text-decoration: none;"><strong><i>documentation</i></strong></a></span></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal animaterot" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+                  <div class="modal-content gradient">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h2 class="modal-title">Input Format</h2>
+                     </div>
+                     <div class="modal-body">
+                    <p><u><b>First move:</b></u><br><br> Enter the 'column number' of the ranger where the bomb is to be placed</p>
+                     <p>
+                     <u><b>Subsequent moves:</b></u><br>  <br>
+                     "x,i1,j1,i2,j2" (opponent's move)  where x = 0 || x=1 | 0=bomb movement and 1=ranger movement.  (i1,j1), (i2,j2) are initial row and column number and final row and column number.
+                   </p>
+                    </div>
+                 </div>
+              </div>
+         </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
